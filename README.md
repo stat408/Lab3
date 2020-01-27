@@ -16,8 +16,10 @@ Download the Uber dataset, available at: [http://math.montana.edu/ahoegh/teachin
 
 ```{r}
 library(readr)
-uber <- read_csv('http://math.montana.edu/ahoegh/teaching/stat408/datasets/UberMay2014.csv')
+uber <- read.csv('http://math.montana.edu/ahoegh/teaching/stat408/datasets/UberMay2014.csv', stringsAsFactors = F)
 ```
+Note using `read_csv` will import the TimeStamp variable as a time object and will require different functions in part 1.
+
 
 ### 1. Writing functions
 #### a. (3 points)
