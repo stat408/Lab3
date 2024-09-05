@@ -1,31 +1,43 @@
-Turn in one copy for each group. If group members are not present in class they will be required to complete their own lab to receive credit. Please turn in **both a DOC or PDF file and your R Markdown script**. 
-
 ## Lab Overview
-This lab is extremely open ended with the goal of creating data visualization with `ggplot2`. For each figure, include a 2-3 sentence description.
+For this question, a subset of the tables contained in the History of Baseball database are available. Additional details are available here: [https://www.kaggle.com/seanlahman/the-history-of-baseball](https://www.kaggle.com/seanlahman/the-history-of-baseball). The following tables will be used for these questions:
 
-## Question 1 (5 points)
+- player
+- all_star
+- salary
 
-Create a better (or new) version of your final figure from Lab 2.
-
-```
-library(tidyverse)
-mt_ppp <- read_csv('https://raw.githubusercontent.com/stat408/Lab2/master/MT_PPP.csv')
-```
-
-
-## Question 2 (10 points)
-
-Create at least two figures from the OkCupid dataset, see additional details below. Note, this lab will also get you thinking about data wrangling / manipulation.
-
-
-#### Description
-R package of cleaned profile data from "OkCupid Profile Data for Introductory Statistics and Data Science Courses": 59,946 OkCupid users who were living within 25 miles of San Francisco, had active profiles on June 26, 2012, were online in the previous year, and had at least one picture in their profile. The original data, publication, code, and codebook can be found at [https://github.com/rudeboybert/JSE_OkCupid](https://github.com/rudeboybert/JSE_OkCupid).
-
-#### References
-Albert Y. Kim, Adriana Escobedo-Land (2015). OkCupid Profile Data for Introductory Statistics and Data Science Courses. Journal of Statistics Education, 23(2). [http://www.amstat.org/publications/jse/v23n2/kim.pdf](http://www.amstat.org/ publications/jse/v23n2/kim.pdf).
+```{r, message = F}
+library(readr)
+library(dplyr)
+library(knitr)
+library(tidyr)
+player <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/player.csv")
+all_star <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/all_star.csv")
+salary <- read_csv("http://math.montana.edu/ahoegh/teaching/stat408/datasets/salary.csv")
 
 ```
-library(okcupiddata)
-data(profiles)
-```
+
+### 1. (2 points)
+How many players were born in Montana.
+
+
+### 2. (4 points)
+Print a table that contains each player born in Montana. The table should contain the player_id as well as given name and their total salary across all years. If salary is not available (pre-1985), include the player but have an NA for salary.
+
+
+### 3. (2 points)
+
+Create a thin dataset for that contains the yearly salaries of David Ortiz, Derek Jeter, and Troy Tulowitzki.
+
+
+### 4. (4 points)
+
+Create a wide dataset for that contains the salaries of David Ortiz, Derek Jeter, and Troy Tulowitzki.
+
+
+
+### 5. (4 points)
+
+Which player(s) made the most appearances as an all star representing the National League (NL)?
+
+
 
