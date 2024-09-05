@@ -5,7 +5,7 @@ For this question, a subset of the tables contained in the History of Baseball d
 - all_star
 - salary
 
-```{r, message = F}
+```
 library(readr)
 library(dplyr)
 library(knitr)
